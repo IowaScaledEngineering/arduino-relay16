@@ -1,0 +1,16 @@
+# Syntax Coloring Map For Relay16 Library
+
+# Datatypes (KEYWORD1)
+
+Relay16	KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+
+begin	KEYWORD2
+relayOn	KEYWORD2
+relayOff	KEYWORD2
+digitalWrite	KEYWORD2
+allOff	KEYWORD2
+allOn	KEYWORD2
+refresh	KEYWORD2
+
