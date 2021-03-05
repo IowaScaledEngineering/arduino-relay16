@@ -86,18 +86,18 @@ boolean Relay16::relayOff(byte relayNum)
 
 boolean Relay16::begin()
 {
-	return this->begin(false, false, false, Wire, -1);
+	return this->begin(Wire, false, false, false, -1);
 }
 
 boolean Relay16::begin(boolean j5, boolean j6, boolean j7, int8_t dioResetPin)
 {
-	return this->begin(j5, j6, j7, Wire, dioResetPin);
+	return this->begin(Wire, j5, j6, j7, dioResetPin);
 }
 
 boolean Relay16::begin(TwoWire& i2cInterface, boolean j5, boolean j6, boolean j7, int8_t dioResetPin)
 {
-	uint8_t addrBitmap = (j5?0x01:0x00) | (j6?0x02:0x00) | (j7?0x04:0x00);
-	return this->begin(0x20 | (addrBitmap), i2cInterface, dioResetPin);
+	uint8_t addrBitmap = 0x20 | (j5?0x01:0x00) | (j6?0x02:0x00) | (j7?0x04:0x00);
+	return this->begin(i2cInterface, addrBitmap, dioResetPin);
 }
 
 boolean Relay16::begin(TwoWire& i2cInterface, uint8_t address, int8_t dioResetPin)
